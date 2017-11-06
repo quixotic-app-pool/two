@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: RootScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-06T14:41:05+08:00
+ * @Last modified time: 2017-11-06T17:44:59+08:00
  */
 
 //import liraries
@@ -19,8 +19,8 @@ import TabBarItem from './widget/TabBarItem'
 
 // import JiazhangDetailScene from './scene/Jiazhang/JiazhangDetailScene'
 // import JiajiaoDetailScene from './scene/Jiajia/JiajiaoDetailScene'
-// import JiazhangFormScene from './scene/Jiazhang/JiazhangFormScene'
-import JiajiaoFormScene from './scene/Jiajia/JiajiaoFormScene'
+import JiaZhangFormScene from './scene/JiaZhang/JiaZhangFormScene'
+import JiaJiaoFormScene from './scene/JiaJiao/JiaJiaoFormScene'
 import DingdanScene from './scene/Dingdan/DingdanScene'
 
 import HomeScene from './scene/Home/HomeScene'
@@ -86,7 +86,7 @@ class RootScene extends PureComponent {
 const Tab = TabNavigator(
     {
         Home: {
-            screen: JiajiaoFormScene,
+            screen: JiaZhangFormScene,
             navigationOptions: ({ navigation }) => ({
                 tabBarLabel: '首页',
                 tabBarIcon: ({ focused, tintColor }) => (

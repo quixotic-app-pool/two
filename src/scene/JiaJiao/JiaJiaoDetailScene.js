@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: JiajiaoDetailScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-06T14:56:54+08:00
+ * @Last modified time: 2017-11-06T17:43:47+08:00
  */
 
 //用到表格可以考虑这个轮子
@@ -21,7 +21,7 @@
   import Swiper from 'react-native-swiper';
 
   // create a component
-  class JiajiaoDetailScene extends PureComponent {
+  class JiaJiaoDetailScene extends PureComponent {
 
       static navigationOptions = ({ navigation }) => ({
           title: 'XXX老师',
@@ -94,4 +94,4 @@
   });
 
   //make this component available to the app
-  export default JiajiaoDetailScene;
+  export default JiaJiaoDetailScene;

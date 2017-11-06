@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: JiajiaoFormScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-06T17:31:30+08:00
+ * @Last modified time: 2017-11-06T17:43:59+08:00
  */
 
  //import liraries
@@ -19,7 +19,7 @@
  import Button  from '../../widget/Button2';
 
  // create a component
- class JiajiaoFormScene extends PureComponent {
+ class JiaJiaoFormScene extends PureComponent {
 
      static navigationOptions = ({ navigation }) => ({
          title: '老师注册',
@@ -283,4 +283,4 @@
      }
  });
  //make this component available to the app
- export default JiajiaoFormScene;
+ export default JiaJiaoFormScene;
