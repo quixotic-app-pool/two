@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: RootScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-06T08:47:03+08:00
+ * @Last modified time: 2017-11-06T14:41:05+08:00
  */
 
 //import liraries
@@ -16,6 +16,12 @@ import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 import color from './widget/color'
 import { screen, system, tool } from './common'
 import TabBarItem from './widget/TabBarItem'
+
+// import JiazhangDetailScene from './scene/Jiazhang/JiazhangDetailScene'
+// import JiajiaoDetailScene from './scene/Jiajia/JiajiaoDetailScene'
+// import JiazhangFormScene from './scene/Jiazhang/JiazhangFormScene'
+import JiajiaoFormScene from './scene/Jiajia/JiajiaoFormScene'
+import DingdanScene from './scene/Dingdan/DingdanScene'
 
 import HomeScene from './scene/Home/HomeScene'
 import NearbyScene from './scene/Nearby/NearbyScene'
@@ -80,7 +86,7 @@ class RootScene extends PureComponent {
 const Tab = TabNavigator(
     {
         Home: {
-            screen: HomeScene,
+            screen: JiajiaoFormScene,
             navigationOptions: ({ navigation }) => ({
                 tabBarLabel: '首页',
                 tabBarIcon: ({ focused, tintColor }) => (

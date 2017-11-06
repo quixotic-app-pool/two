@@ -5,17 +5,7 @@
  * @Project: one_server
  * @Filename: MessageScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-06T08:38:32+08:00
- */
-
-
-
-/**
- * Copyright (c) 2017-present, Liu Jinyong
- * All rights reserved.
- *
- * https://github.com/huanxsd/MeiTuan
- * @flow
+ * @Last modified time: 2017-11-06T09:59:05+08:00
  */
 
 //import liraries
