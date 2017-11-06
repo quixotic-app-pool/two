@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: JiazhangScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-06T17:57:34+08:00
+ * @Last modified time: 2017-11-06T18:01:59+08:00
  */
 
   //import liraries
@@ -69,19 +69,14 @@
       }
       render() {
         let { phone } = this.state;
-        let data = [{
-           value: 'Banana',
-         }, {
-           value: 'Mango',
-         }, {
-           value: 'Pear',
-         }];
-         let birth = [{
-            value: '2001',
+         let grades = [{
+            value: '幼儿',
           }, {
-            value: '2002',
+            value: '小学一年级',
           }, {
-            value: '2003',
+            value: '高中二年级',
+          }, {
+            value: '大学一年级',
           }]
           let district = [{
              value: '栖霞区',
@@ -90,13 +85,6 @@
            }, {
              value: '白下区',
            }]
-           let position = [{
-              value: '本科在读',
-            }, {
-              value: '硕士在读',
-            }, {
-              value: '外籍留学生',
-            }]
             let college = [{
                value: '南师大',
              }, {
@@ -104,8 +92,6 @@
              }, {
                value: '晓庄师范',
              }]
-             let grades = ['幼儿', '小学一年级', '高中二年级', '大学一年级']
-             let timeavailable = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
              let preferedTeacher = ['女老师', '男老师', '大学生老师', '在职教师']
              let acceptiblePriceRange = ['50~100', '100~150', '150~200', '200以上']
 
@@ -151,6 +137,7 @@
                 <Dropdown
                    containerStyle={{flex:1}}
                    label='学员年级'
+                   itemCount={3}
                    data={grades}
                  />
                  <TextField
