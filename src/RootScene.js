@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: RootScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-07T12:29:14+08:00
+ * @Last modified time: 2017-11-07T15:02:36+08:00
  */
 
 //import liraries
@@ -17,11 +17,11 @@ import color from './widget/color'
 import { screen, system, tool } from './common'
 import TabBarItem from './widget/TabBarItem'
 
-import JiaZhangDetailScene from './scene/JiaZhang/JiaZhangDetailScene'
+// import JiaZhangDetailScene from './scene/JiaZhang/JiaZhangDetailScene'
 // import JiaJiaoDetailScene from './scene/JiaJiao/JiaJiaoDetailScene'
 // import JiaZhangFormScene from './scene/JiaZhang/JiaZhangFormScene'
-import JiaJiaoFormScene from './scene/JiaJiao/JiaJiaoFormScene'
-import DingdanScene from './scene/Dingdan/DingdanScene'
+// import JiaJiaoFormScene from './scene/JiaJiao/JiaJiaoFormScene'
+// import DingdanScene from './scene/Dingdan/DingdanScene'
 
 import HomeScene from './scene/Home/HomeScene'
 import NearbyScene from './scene/Nearby/NearbyScene'
@@ -162,7 +162,7 @@ class RootScene extends PureComponent {
 const Navigator = StackNavigator(
     {
         // Tab: { screen: Tab },
-        Home: { screen: JiaZhangDetailScene },
+        Home: { screen: HomeScene },
         Web: { screen: WebScene },
         GroupPurchase: { screen: GroupPurchaseScene },
         Nearby: { screen: NearbyScene },

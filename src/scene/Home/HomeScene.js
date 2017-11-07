@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: HomeScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-06T11:37:36+08:00
+ * @Last modified time: 2017-11-07T18:00:05+08:00
  */
 
 //import liraries
@@ -22,6 +22,7 @@ import api from '../../api'
 import HomeMenuView from './HomeMenuView'
 import HomeGridView from './HomeGridView'
 import GroupPurchaseCell from '../GroupPurchase/GroupPurchaseCell'
+import ListCell2 from '../GroupPurchase/ListCell2'
 import Icon from 'react-native-vector-icons/Ionicons'
 import ActionButton from 'react-native-action-button'
 
@@ -155,6 +156,14 @@ class HomeScene extends PureComponent {
             />
         )
     }
+    // renderCell(info: Object) {
+    //     return (
+    //         <ListCell2
+    //             info={info.item}
+    //             onPress={this.onCellSelected}
+    //         />
+    //     )
+    // }
 
     onCellSelected(info: Object) {
         StatusBar.setBarStyle('default', false)
@@ -164,16 +173,19 @@ class HomeScene extends PureComponent {
     keyExtractor(item: Object, index: number) {
         return item.id
     }
-
+    //
+    // renderHeader() {
+    //     return (
+    //         <View>
+    //           <Text>nothing</Text>
+    //         </View>
+    //     )
+    // }
     renderHeader() {
         return (
             <View>
-                <TouchableOpacity>
-                  <View style={{height: 90, paddingHorizontal: 5, marginVertical: 10}}>
-                    <Image source={require('../../img/Home/ad1.png')} style={{height: 90, width: screen.width - 10, resizeMode: 'cover'}}/>
-                  </View>
-                </TouchableOpacity>
-                <HomeGridView infos={this.state.discounts} onGridSelected={(this.onGridSelected)} />
+
+
                 <SpacingView />
 
                 <HomeMenuView menuInfos={api.menuInfo} onMenuSelected={this.onMenuSelected} />
@@ -198,33 +210,83 @@ class HomeScene extends PureComponent {
     }
 
     render() {
+        const teacherInfo = [
+          {key:"$key2", data: [{
+              id: 424366351,
+              imageUrl: "http:\/\/i.telegraph.co.uk\/multimedia\/archive\/03491\/Vladimir_Putin_1_3491835k.jpg",
+              name: "牛老师",
+              price: "$100起",
+              college: '南京师范大学',
+              position: '在读研究生',
+              major: '电气工程及其自动化',
+              certs: ['英语六级', '穿越火线第一名', '宿舍阿姨明星奖', '屌丝逆袭第一名', '雅思'],
+          },{
+              id: 4243663512,
+              imageUrl: "http:\/\/i.telegraph.co.uk\/multimedia\/archive\/03491\/Vladimir_Putin_1_3491835k.jpg",
+              name: "牛老师",
+              price: "$100起",
+              college: '南京师范大学',
+              position: '在读研究生',
+              major: '电气工程及其自动化',
+              certs: ['英语六级', '穿越火线第一名', '宿舍阿姨明星奖', '屌丝逆袭第一名', '雅思'],
+          },{
+              id: 4243663513,
+              imageUrl: "http:\/\/i.telegraph.co.uk\/multimedia\/archive\/03491\/Vladimir_Putin_1_3491835k.jpg",
+              name: "牛老师",
+              price: "$100起",
+              college: '南京师范大学',
+              position: '在读研究生',
+              major: '电气工程及其自动化',
+              certs: ['英语六级', '穿越火线第一名', '宿舍阿姨明星奖', '屌丝逆袭第一名', '雅思'],
+          },{
+              id: 4243663514,
+              imageUrl: "http:\/\/i.telegraph.co.uk\/multimedia\/archive\/03491\/Vladimir_Putin_1_3491835k.jpg",
+              name: "牛老师",
+              price: "$100起",
+              college: '南京师范大学',
+              position: '在读研究生',
+              major: '电气工程及其自动化',
+              certs: ['英语六级', '穿越火线第一名', '宿舍阿姨明星奖', '屌丝逆袭第一名', '雅思'],
+          }], title: "最新老师"},
+        ]
+        var orderInfo = [
+          {key:"$key2", data: [{
+              id: 424366351,
+              priceRange: "$100~150元/时",
+              grade: "小学二年级",
+              gender: '男生',
+              subject: '语文',
+              preference: '男老师',
+              address: '龙江新城市广场2栋201单元',
+              timePrefered: '一周三次 | 每次二小时',
+              otherRequirement: '有家教经验，耐心，可以给孩子有邻家姐姐或者哥哥的感觉，咳咳'
+          },{
+              id: 4243663513,
+              priceRange: "$100~150元/时",
+              grade: "小学二年级",
+              gender: '男生',
+              subject: '语文',
+              preference: '男老师',
+              address: '龙江新城市广场2栋201单元',
+              timePrefered: '一周三次 | 每次二小时',
+              otherRequirement: '有家教经验，耐心，可以给孩子有邻家姐姐或者哥哥的感觉，咳咳'
+          },{
+              id: 4243663514,
+              priceRange: "$100~150元/时",
+              grade: "小学二年级",
+              gender: '男生',
+              subject: '语文',
+              preference: '男老师',
+              address: '龙江新城市广场2栋201单元',
+              timePrefered: '一周三次 | 每次二小时',
+              otherRequirement: '有家教经验，耐心，可以给孩子有邻家姐姐或者哥哥的感觉，咳咳'
+          }], title: "最新学员"},
+        ]
         return (
             <View style={styles.container}>
                 <SectionList
-                    sections={[
-                      {key:"$key1", title: "推荐拼团", data: this.state.dataList},
-                      {key:"$key2", data: [{
-                          id: 42436635,
-                          imageUrl: "https:\/\/beebom.com\/reverse-image-search-engines-apps-uses\/",
-                          title: "test",
-                          subtitle: "test",
-                          price: 3
-                      }], title: "推荐大学生家教"},
-                      {key:"$key3", data: [{
-                          id: 42332535,
-                          imageUrl: "https:\/\/beebom.com\/reverse-image-search-engines-apps-uses\/",
-                          title: "test",
-                          subtitle: "test",
-                          price: 3
-                      }], title: "推荐专职教师"},
-                      {key:"$key4", data: [{
-                          id: 42467535,
-                          imageUrl: "https:\/\/beebom.com\/reverse-image-search-engines-apps-uses\/",
-                          title: "test",
-                          subtitle: "test",
-                          price: 3
-                      }], title: "推荐优秀学习机构"}
-                    ]
+                    sections={
+                      teacherInfo
                     }
                     keyExtractor={this.keyExtractor}
                     onRefresh={this.requestData}
@@ -241,24 +303,25 @@ class HomeScene extends PureComponent {
                     renderItem={this.renderCell}
                 />
 
-                <View style={{bottom: 120, flex:1, backgroundColor: '#f3f3f3'}}>
-                  <ActionButton buttonColor="rgba(231,76,60,1)">
-                    <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={() => console.log("notes tapped!")}>
-                      <Icon name="md-create" style={styles.actionButtonIcon} />
-                    </ActionButton.Item>
-                    <ActionButton.Item buttonColor='#3498db' title="Notifications" onPress={() => {}}>
-                      <Icon name="md-notifications-off" style={styles.actionButtonIcon} />
-                    </ActionButton.Item>
-                    <ActionButton.Item buttonColor='#1abc9c' title="All Tasks" onPress={() => {}}>
-                      <Icon name="md-done-all" style={styles.actionButtonIcon} />
-                    </ActionButton.Item>
-                  </ActionButton>
-                </View>
             </View>
         );
     }
 }
 
+
+                // <View style={{bottom: 120, flex:1, backgroundColor: '#f3f3f3'}}>
+                //   <ActionButton buttonColor="rgba(231,76,60,1)">
+                //     <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={() => console.log("notes tapped!")}>
+                //       <Icon name="md-create" style={styles.actionButtonIcon} />
+                //     </ActionButton.Item>
+                //     <ActionButton.Item buttonColor='#3498db' title="Notifications" onPress={() => {}}>
+                //       <Icon name="md-notifications-off" style={styles.actionButtonIcon} />
+                //     </ActionButton.Item>
+                //     <ActionButton.Item buttonColor='#1abc9c' title="All Tasks" onPress={() => {}}>
+                //       <Icon name="md-done-all" style={styles.actionButtonIcon} />
+                //     </ActionButton.Item>
+                //   </ActionButton>
+                // </View>
 // define your styles
 const styles = StyleSheet.create({
     container: {

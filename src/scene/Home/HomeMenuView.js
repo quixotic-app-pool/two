@@ -1,8 +1,20 @@
 /**
+ * @Author: MichaelChen <mymac>
+ * @Date:   2017-09-27T21:44:42+08:00
+ * @Email:  teacherincafe@163.com
+ * @Project: one_server
+ * @Filename: HomeMenuView.js
+ * @Last modified by:   mymac
+ * @Last modified time: 2017-11-07T17:24:16+08:00
+ */
+
+
+
+/**
  * Copyright (c) 2017-present, Liu Jinyong
  * All rights reserved.
  *
- * https://github.com/huanxsd/MeiTuan 
+ * https://github.com/huanxsd/MeiTuan
  * @flow
  */
 

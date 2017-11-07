@@ -1,4 +1,16 @@
 /**
+ * @Author: MichaelChen <mymac>
+ * @Date:   2017-09-27T21:44:42+08:00
+ * @Email:  teacherincafe@163.com
+ * @Project: one_server
+ * @Filename: api.js
+ * @Last modified by:   mymac
+ * @Last modified time: 2017-11-07T17:38:03+08:00
+ */
+
+
+
+/**
  * Copyright (c) 2017-present, Liu Jinyong
  * All rights reserved.
  *
@@ -15,25 +27,18 @@ export default {
 
 
     menuInfo: [
-            { title: '订单', icon: require('./img/Home/icon_homepage_foodCategory.png') },
-            { title: '生源回应', icon: require('./img/Home/icon_homepage_movieCategory.png') },
-            { title: '家教回应', icon: require('./img/Home/icon_homepage_hotelCategory.png') },
-            { title: '机构回应', icon: require('./img/Home/icon_homepage_KTVCategory.png') },
-            { title: '钱包', icon: require('./img/Home/icon_homepage_default.png') },
-            { title: '我的学生', icon: require('./img/Home/icon_homepage_foottreatCategory.png') },
-            { title: '家教发单', icon: require('./img/Home/icon_homepage_lifeServiceCategory.png') },
-            { title: '保姆发单', icon: require('./img/Home/icon_homepage_lifeServiceCategory.png') },
-            { title: '机构发单', icon: require('./img/Home/icon_homepage_lifeServiceCategory.png') },
-            { title: '最新单子', icon: require('./img/Home/icon_homepage_entertainmentCategory.png') },
-            { title: '客服', icon: require('./img/Home/icon_homepage_beautyCategory.png') },
-            { title: '推荐', icon: require('./img/Home/icon_homepage_shoppingCategory.png') },
-
-            { title: '大学生家教', icon: require('./img/Home/icon_homepage_beautyCategory.png') },
-            { title: '专职教师', icon: require('./img/Home/icon_homepage_movieCategory.png') },
-            { title: '金牌教员', icon: require('./img/Home/icon_homepage_foottreatCategory.png') },
-            { title: '海归派', icon: require('./img/Home/icon_homepage_hotelCategory.png') },
-            { title: '拼团活动', icon: require('./img/Home/icon_homepage_default.png') },
-            { title: '评价', icon: require('./img/Home/icon_homepage_entertainmentCategory.png') }
+            { title: '数学', icon: require('./img/Subject/math.png') },
+            { title: '英语', icon: require('./img/Subject/en.png') },
+            { title: '语文', icon: require('./img/Subject/literature.png') },
+            { title: '物理', icon: require('./img/Subject/physics.png') },
+            { title: '在线课', icon: require('./img/Subject/online.png') },
+            { title: '化学', icon: require('./img/Subject/chemistry.png') },
+            { title: '生物', icon: require('./img/Subject/biology.png') },
+            { title: '政治', icon: require('./img/Subject/polytics.png') },
+            { title: '历史', icon: require('./img/Subject/history.png') },
+            { title: '地理', icon: require('./img/Subject/geometry.png') },
+            { title: '奥数', icon: require('./img/Subject/olympics.png') },
+            { title: '科学', icon: require('./img/Subject/science.png') }
         ]
 }
 
