@@ -5,12 +5,12 @@
  * @Project: one_server
  * @Filename: HomeScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-07T18:00:05+08:00
+ * @Last modified time: 2017-11-07T18:52:40+08:00
  */
 
 //import liraries
 import React, { PureComponent } from 'react'
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ListView, Image, StatusBar, FlatList, SectionList } from 'react-native'
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, ListView, Image, StatusBar, FlatList, SectionList, Dimensions } from 'react-native'
 
 import { Heading1, Heading2, Paragraph } from '../../widget/Text'
 import { color, Button, NavigationItem, SearchBar, SpacingView } from '../../widget'
@@ -24,15 +24,18 @@ import HomeGridView from './HomeGridView'
 import GroupPurchaseCell from '../GroupPurchase/GroupPurchaseCell'
 import ListCell2 from '../GroupPurchase/ListCell2'
 import Icon from 'react-native-vector-icons/Ionicons'
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import ActionButton from 'react-native-action-button'
+import { RaisedTextButton } from '../../widget/react-native-material-buttons';
 
+var screenWidth = Dimensions.get('window').width
 // create a component
 class HomeScene extends PureComponent {
 
     static navigationOptions = ({ navigation }) => ({
         headerTitle: (
             <TouchableOpacity style={styles.searchBar} onPress={()=>navigation.state.params.handleSearch()}>
-                <Paragraph>搜索学科或者老师...</Paragraph>
+                <Paragraph style={{marginLeft: 10}}>筛选老师...</Paragraph>
                 <Icon name="ios-search" style={styles.searchIcon} size={20} color="#4F8EF7" />
             </TouchableOpacity>
         ),
@@ -52,7 +55,7 @@ class HomeScene extends PureComponent {
         ),
         headerLeft: (
             <NavigationItem
-                title='陈尼玛作品'
+                title='泽铭作品'
                 titleStyle={{ color: 'white' }}
                 onPress={() => {
 
@@ -184,7 +187,15 @@ class HomeScene extends PureComponent {
     renderHeader() {
         return (
             <View>
-
+                <View style={{height: 120, marginTop:20, width: screenWidth, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+                  <View style={{flex:1, paddingHorizontal:10}}>
+                    <RaisedTextButton titleStyle={{fontSize:18}} onPress={this._collapseAlavailableKagaku} style={{width: (screenWidth - 50)/2, height:100, borderRadius:5}} rippleDuration={600} rippleOpacity={0.54} title='找老师'   color='#039BE5' titleColor='white' />
+                  </View>
+                  <View style={{flex:1, paddingRight:10}}>
+                    <RaisedTextButton titleStyle={{fontSize:18}} onPress={this._collapseAlavailableKagaku} style={{width: (screenWidth - 50)/2, height:60, borderRadius:5,marginBottom: 10}} rippleDuration={600} rippleOpacity={0.54} title='发英雄帖'   color='#039BE5' titleColor='white' />
+                    <RaisedTextButton titleStyle={{fontSize:18}} onPress={this._collapseAlavailableKagaku} style={{width: (screenWidth - 50)/2, height:40, borderRadius:5}} rippleDuration={600} rippleOpacity={0.54} title='找学生'   color='#039BE5' titleColor='white' />
+                  </View>
+                </View>
 
                 <SpacingView />
 
@@ -302,26 +313,32 @@ class HomeScene extends PureComponent {
                     ListHeaderComponent={this.renderHeader}
                     renderItem={this.renderCell}
                 />
-
+                <View style={{bottom: 120, flex:1, backgroundColor: '#f3f3f3'}}>
+                  <ActionButton buttonColor="rgba(231,76,60,1)">
+                    <ActionButton.Item textContainerStyle={{borderRadius:5, backgroundColor: 'gold'}} buttonColor='#9b59b6' title="筛选老师" onPress={() => console.log("notes tapped!")}>
+                      <MaterialIcon name="file-find" style={styles.actionButtonIcon}/>
+                    </ActionButton.Item>
+                    <ActionButton.Item textContainerStyle={{borderRadius:5, backgroundColor: 'gold'}} buttonColor='#3498db' title="发英雄帖" onPress={() => {}}>
+                      <Icon name="md-create" style={styles.actionButtonIcon} />
+                    </ActionButton.Item>
+                    <ActionButton.Item textContainerStyle={{borderRadius:5, backgroundColor: 'gold'}} buttonColor='#f6546a' title="赏金猎人" onPress={() => {}}>
+                      <MaterialIcon name="find-replace" style={styles.actionButtonIcon}/>
+                    </ActionButton.Item>
+                    <ActionButton.Item textContainerStyle={{borderRadius:5, backgroundColor: 'gold'}} buttonColor='#00ffff' title="您的消息" onPress={() => {}}>
+                      <Icon name="md-notifications-off" style={styles.actionButtonIcon} />
+                    </ActionButton.Item>
+                    <ActionButton.Item textContainerStyle={{borderRadius:5, backgroundColor: 'gold'}} buttonColor='#ffa500' title="老师度天劫" onPress={() => {}}>
+                      <MaterialIcon name="update" style={styles.actionButtonIcon}/>
+                    </ActionButton.Item>
+                  </ActionButton>
+                </View>
             </View>
         );
     }
 }
 
 
-                // <View style={{bottom: 120, flex:1, backgroundColor: '#f3f3f3'}}>
-                //   <ActionButton buttonColor="rgba(231,76,60,1)">
-                //     <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={() => console.log("notes tapped!")}>
-                //       <Icon name="md-create" style={styles.actionButtonIcon} />
-                //     </ActionButton.Item>
-                //     <ActionButton.Item buttonColor='#3498db' title="Notifications" onPress={() => {}}>
-                //       <Icon name="md-notifications-off" style={styles.actionButtonIcon} />
-                //     </ActionButton.Item>
-                //     <ActionButton.Item buttonColor='#1abc9c' title="All Tasks" onPress={() => {}}>
-                //       <Icon name="md-done-all" style={styles.actionButtonIcon} />
-                //     </ActionButton.Item>
-                //   </ActionButton>
-                // </View>
+
 // define your styles
 const styles = StyleSheet.create({
     container: {
@@ -342,7 +359,7 @@ const styles = StyleSheet.create({
         height: 30,
         borderRadius: 19,
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
         backgroundColor: 'white',
         alignSelf: 'center',
@@ -354,8 +371,8 @@ const styles = StyleSheet.create({
         alignItems: 'flex-end',
     },
     actionButtonIcon: {
-    fontSize: 20,
-    height: 22,
+    fontSize: 25,
+    height: 25,
     color: 'white',
   }
 });
