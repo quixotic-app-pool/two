@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: GroupPurchaseCell.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-07T18:05:14+08:00
+ * @Last modified time: 2017-11-07T18:07:58+08:00
  */
 
 
@@ -106,7 +106,6 @@ const styles = StyleSheet.create({
     rightContainer: {
         flex: 1,
         paddingLeft: 20,
-        paddingRight: 10,
     },
     price: {
         color: color.theme
