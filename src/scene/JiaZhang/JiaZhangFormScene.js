@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: JiazhangScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-06T18:01:59+08:00
+ * @Last modified time: 2017-11-07T09:30:09+08:00
  */
 
   //import liraries
@@ -13,7 +13,7 @@
   import { View, Text, StyleSheet, Checkbox, Alert, ScrollView } from 'react-native'
   import { Dropdown } from 'react-native-material-dropdown';
   import { TextField } from 'react-native-material-textfield';
-  import CheckBox from '../Jiajia/CheckBox';
+  import CheckBox from '../JiaJiao/CheckBox';
   import Collapsible from 'react-native-collapsible';
   import { RaisedTextButton } from '../../widget/react-native-material-buttons';
   import Button  from '../../widget/Button2';

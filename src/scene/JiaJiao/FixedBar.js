@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: StickyBar.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-06T11:36:13+08:00
+ * @Last modified time: 2017-11-07T12:29:31+08:00
  */
 
  import React, { Component } from 'react'
@@ -33,19 +33,12 @@
        return (
          <View style={styles.cartView}>
            <View style={styles.cartBar}>
-
-               <View style={{flex: 1, justifyContent:"center", paddingLeft: px2dp(70)}}>
-                 {
-                   !lens.maxPrice?
-                     (<Text style={{color: "#999", fontWeight: "bold"}}>{"购物车为空"}</Text>):
-                     [<Text key={0} style={{color: "#fff", fontWeight: "bold", fontSize: px2dp(16)}}>{`￥${lens.maxPrice}`}</Text>,
-                     <Text key={1} style={{color: "#fff", fontSize: px2dp(10)}}>{"另加7元配送费"}</Text>]
-                 }
-               </View>
-               {!lens.maxPrice?
-                 <Text style={styles.price}>{"￥6元起"}</Text>:
-                 <Text style={[styles.price, {backgroundColor:"#00c257", color:"#fff"}]}>{"去结算"}</Text>}
-
+              <View style={styles.left}>
+                <Text style={[styles.textStyle, styles.other]}>{"看看其他"}</Text>
+              </View>
+              <View style={styles.right}>
+                <Text style={styles.textStyle}>{"联系家长"}</Text>
+              </View>
            </View>
          </View>
        )
@@ -100,17 +93,29 @@
      height: px2dp(46),
      flexDirection: "row",
      alignItems: "center",
-     justifyContent: "space-between",
-     backgroundColor: "rgba(0,0,0,.9)"
+     justifyContent: "center",
+     backgroundColor: "rgba(28,199,97,.9)"
    },
-   price: {
-     color: "#999",
+   other: {
+     color: '#000',
+     fontWeight: "normal",
+   },
+   textStyle: {
+     color: '#fff',
      fontWeight: "bold",
      fontSize: px2dp(16),
-     paddingHorizontal: 20,
-     height:px2dp(46),
      lineHeight: Platform.OS === 'ios'?px2dp(46):32,
-     backgroundColor:"rgba(255,255,255,.1)"
+   },
+   left: {
+     flex: 1,
+     flexDirection: "row",
+     justifyContent: "center",
+     backgroundColor: "rgba(255,255,255,.9)"
+   },
+   right: {
+     flex: 2,
+     flexDirection: "row",
+     justifyContent: "center",
    },
    blur: {
      flex: 1,

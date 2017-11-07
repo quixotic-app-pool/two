@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: RootScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-06T17:44:59+08:00
+ * @Last modified time: 2017-11-07T12:29:14+08:00
  */
 
 //import liraries
@@ -17,9 +17,9 @@ import color from './widget/color'
 import { screen, system, tool } from './common'
 import TabBarItem from './widget/TabBarItem'
 
-// import JiazhangDetailScene from './scene/Jiazhang/JiazhangDetailScene'
-// import JiajiaoDetailScene from './scene/Jiajia/JiajiaoDetailScene'
-import JiaZhangFormScene from './scene/JiaZhang/JiaZhangFormScene'
+import JiaZhangDetailScene from './scene/JiaZhang/JiaZhangDetailScene'
+// import JiaJiaoDetailScene from './scene/JiaJiao/JiaJiaoDetailScene'
+// import JiaZhangFormScene from './scene/JiaZhang/JiaZhangFormScene'
 import JiaJiaoFormScene from './scene/JiaJiao/JiaJiaoFormScene'
 import DingdanScene from './scene/Dingdan/DingdanScene'
 
@@ -83,85 +83,86 @@ class RootScene extends PureComponent {
     }
 }
 
-const Tab = TabNavigator(
-    {
-        Home: {
-            screen: JiaZhangFormScene,
-            navigationOptions: ({ navigation }) => ({
-                tabBarLabel: '首页',
-                tabBarIcon: ({ focused, tintColor }) => (
-                    <TabBarItem
-                        tintColor={tintColor}
-                        focused={focused}
-                        normalImage={require('./img/tabbar/pfb_tabbar_homepage2x.png')}
-                        selectedImage={require('./img/tabbar/pfb_tabbar_homepage_selected2x.png')}
-                    />
-                )
-            }),
-        },
-        Nearby: {
-            screen: NearbyScene,
-            navigationOptions: ({ navigation }) => ({
-                tabBarLabel: '推荐',
-                tabBarIcon: ({ focused, tintColor }) => (
-                    <TabBarItem
-                        tintColor={tintColor}
-                        focused={focused}
-                        normalImage={require('./img/tabbar/pfb_tabbar_merchant2x.png')}
-                        selectedImage={require('./img/tabbar/pfb_tabbar_merchant_selected2x.png')}
-                    />
-                )
-            }),
-        },
-
-        Message: {
-            screen: MessageScene,
-            navigationOptions: ({ navigation }) => ({
-                tabBarLabel: '消息',
-                tabBarIcon: ({ focused, tintColor }) => (
-                    <TabBarItem
-                        tintColor={tintColor}
-                        focused={focused}
-                        normalImage={require('./img/tabbar/pfb_tabbar_order2x.png')}
-                        selectedImage={require('./img/tabbar/pfb_tabbar_order_selected2x.png')}
-                    />
-                )
-            }),
-        },
-
-        Mine: {
-            screen: MineScene,
-            navigationOptions: ({ navigation }) => ({
-                tabBarLabel: '我的',
-                tabBarIcon: ({ focused, tintColor }) => (
-                    <TabBarItem
-                        tintColor={tintColor}
-                        focused={focused}
-                        normalImage={require('./img/tabbar/pfb_tabbar_mine2x.png')}
-                        selectedImage={require('./img/tabbar/pfb_tabbar_mine_selected2x.png')}
-                    />
-                )
-            }),
-        },
-    },
-    {
-        tabBarComponent: TabBarBottom,
-        tabBarPosition: 'bottom',
-        swipeEnabled: true,
-        animationEnabled: true,
-        lazy: true,
-        tabBarOptions: {
-            activeTintColor: color.theme,
-            inactiveTintColor: '#979797',
-            style: { backgroundColor: '#ffffff' },
-        },
-    }
-
-);
+// const Tab = TabNavigator(
+//     {
+//         Home: {
+//             screen: JiaJiaoDetailScene,
+//             navigationOptions: ({ navigation }) => ({
+//                 tabBarLabel: '首页',
+//                 tabBarIcon: ({ focused, tintColor }) => (
+//                     <TabBarItem
+//                         tintColor={tintColor}
+//                         focused={focused}
+//                         normalImage={require('./img/tabbar/pfb_tabbar_homepage2x.png')}
+//                         selectedImage={require('./img/tabbar/pfb_tabbar_homepage_selected2x.png')}
+//                     />
+//                 )
+//             }),
+//         },
+//         Nearby: {
+//             screen: NearbyScene,
+//             navigationOptions: ({ navigation }) => ({
+//                 tabBarLabel: '推荐',
+//                 tabBarIcon: ({ focused, tintColor }) => (
+//                     <TabBarItem
+//                         tintColor={tintColor}
+//                         focused={focused}
+//                         normalImage={require('./img/tabbar/pfb_tabbar_merchant2x.png')}
+//                         selectedImage={require('./img/tabbar/pfb_tabbar_merchant_selected2x.png')}
+//                     />
+//                 )
+//             }),
+//         },
+//
+//         Message: {
+//             screen: MessageScene,
+//             navigationOptions: ({ navigation }) => ({
+//                 tabBarLabel: '消息',
+//                 tabBarIcon: ({ focused, tintColor }) => (
+//                     <TabBarItem
+//                         tintColor={tintColor}
+//                         focused={focused}
+//                         normalImage={require('./img/tabbar/pfb_tabbar_order2x.png')}
+//                         selectedImage={require('./img/tabbar/pfb_tabbar_order_selected2x.png')}
+//                     />
+//                 )
+//             }),
+//         },
+//
+//         Mine: {
+//             screen: MineScene,
+//             navigationOptions: ({ navigation }) => ({
+//                 tabBarLabel: '我的',
+//                 tabBarIcon: ({ focused, tintColor }) => (
+//                     <TabBarItem
+//                         tintColor={tintColor}
+//                         focused={focused}
+//                         normalImage={require('./img/tabbar/pfb_tabbar_mine2x.png')}
+//                         selectedImage={require('./img/tabbar/pfb_tabbar_mine_selected2x.png')}
+//                     />
+//                 )
+//             }),
+//         },
+//     },
+//     {
+//         tabBarComponent: TabBarBottom,
+//         tabBarPosition: 'bottom',
+//         swipeEnabled: true,
+//         animationEnabled: true,
+//         lazy: true,
+//         tabBarOptions: {
+//             activeTintColor: color.theme,
+//             inactiveTintColor: '#979797',
+//             style: { backgroundColor: '#ffffff' },
+//         },
+//     }
+//
+// );
 
 const Navigator = StackNavigator(
     {
-        Tab: { screen: Tab },
+        // Tab: { screen: Tab },
+        Home: { screen: JiaZhangDetailScene },
         Web: { screen: WebScene },
         GroupPurchase: { screen: GroupPurchaseScene },
         Nearby: { screen: NearbyScene },

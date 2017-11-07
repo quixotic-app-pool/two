@@ -5,7 +5,7 @@
  * @Project: one_server
  * @Filename: JiajiaoFormScene.js
  * @Last modified by:   mymac
- * @Last modified time: 2017-11-06T17:43:59+08:00
+ * @Last modified time: 2017-11-07T12:16:36+08:00
  */
 
  //import liraries
@@ -259,6 +259,22 @@
               />
               <RaisedTextButton onPress={this.showContent} style={styles.button} rippleDuration={600} rippleOpacity={0.54} title='添加'   color='#039BE5' titleColor='white' />
               <Text>这里添加证书，每次添加则会push到certificateArray里面，以tag形式显示在下方</Text>
+
+              <Text>代课经历</Text>
+              <TextField
+                label="时间段格式请严格按照'xxxx~xxxx'如'2015~2017'"
+                value={phone}
+                onChangeText={ (phone) => this.setState({ phone }) }
+              />
+              <TextField
+                label="细节填写"
+                value={phone}
+                onChangeText={ (phone) => this.setState({ phone }) }
+              />
+              <RaisedTextButton onPress={this.showContent} style={styles.button} rippleDuration={600} rippleOpacity={0.54} title='添加'   color='#039BE5' titleColor='white' />
+              <Text>这里每次添加会push到新的经历array里面</Text>
+
+
               <TextField
                 label='自我描述和家教经历'
                 value={phone}
